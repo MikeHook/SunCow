@@ -91,6 +91,9 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CardTemplate.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CardCategory.cs" />
+    <Compile Include="Customer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -110,7 +113,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\Tasks\" />
+    <Folder Include="Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
