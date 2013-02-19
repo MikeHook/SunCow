@@ -9,11 +9,10 @@
         public Card() { }
 
         //Note - In full application would be better if cards could be created without a customer, limit for brevity in prototype   
-        public Card(Customer customer, CardTemplate cardTemplate, CardCategory category)
+        public Card(Customer customer, Template cardTemplate)
         {
             Customer = customer;
-            CardTemplate = cardTemplate;
-            Category = category;
+            CardTemplate = cardTemplate;     
         }
 
         /// <summary>
@@ -26,29 +25,30 @@
         public virtual string SignOff { get; set; }
         public virtual decimal Price { get; set; }
 
-        public virtual CardTemplate CardTemplate { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual CardCategory Category { get; set; }
+        public virtual Template CardTemplate { get; set; }
+        public virtual Customer Customer { get; set; }       
 
-        public virtual string GetImagePath(string imageBasePath, string imageSubDirectory) 
+        public virtual string GetOutsideImagePath(string imageBasePath) 
         {
-            return Path.Combine(imageBasePath, imageSubDirectory, ImageDirectory, ImageName);             
+            return CustomerImagePath(imageBasePath, string.Format("{0}-outside.png", Id));             
         }
 
-        public virtual string GetThumbnailPath(string imageBasePath, string thumbnailSubDirectory)
+        public virtual string GetInsideImagePath(string imageBasePath)
         {
-            return Path.Combine(imageBasePath, thumbnailSubDirectory, ImageDirectory, ImageName);
+            return CustomerImagePath(imageBasePath, string.Format("{0}-inside.png", Id));
         }
 
-        protected virtual string ImageDirectory 
+        public virtual string GetThumbnailPath(string imageBasePath)
         {
-            get { return string.Format("{0}-{1}\\", Customer.LastName, Customer.Id); }        
+            return CustomerImagePath(imageBasePath, string.Format("{0}-tn.png", Id));
         }
 
-        protected virtual string ImageName 
-        { 
-            //Note - not sure if png will be the best format, depends what we can get out of the image generator
-            get {return string.Format("{0}.png", Id); }
+        //TODO - Check whether this works when directories don't include \ separators
+        protected virtual string CustomerImagePath(string imageBasePath, string imageName)
+        {
+            string customCardsDirectory = "Custom\\";            
+
+            return Path.Combine(imageBasePath, customCardsDirectory, Customer.ImageDirectory, imageName);           
         }
     }
 }

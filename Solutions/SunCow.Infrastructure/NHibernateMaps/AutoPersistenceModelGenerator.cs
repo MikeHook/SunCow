@@ -23,7 +23,7 @@
     {
         public AutoPersistenceModel Generate()
         {
-            var mappings = AutoMap.AssemblyOf<CardTemplate>(new AutomappingConfiguration());
+            var mappings = AutoMap.AssemblyOf<Template>(new AutomappingConfiguration());
             mappings.IgnoreBase<Entity>();
             mappings.IgnoreBase(typeof(EntityWithTypedId<>));
             mappings.Conventions.Setup(GetConventions());

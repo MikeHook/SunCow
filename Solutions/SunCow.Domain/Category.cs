@@ -3,18 +3,17 @@
     using SharpArch.Domain.DomainModel;
     using System.Collections.Generic;
 
-    public class Customer : Entity
+    public class Category : Entity
     {
-        public Customer()
+        public Category()
         {
             Cards = new List<Card>();
         }
 
-        public virtual string FirstName { get; set; }
-        public virtual string LastName { get; set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
-        /// The sub directory that images for this customer will be stored in
+        /// The sub directory that template images in this category  will be stored in 
         /// </summary>
         //TODO - Add a unique constraint to this property
         public virtual string ImageDirectory { get; set; }
