@@ -10,7 +10,7 @@ using SunCow.Domain.Contracts.Repositories;
 
 namespace SunCow.Infrastructure.Repositories
 {
-	public class CategoryRepository : LinqRepository<Category>, ICategoryRepository
+	public class CategoryRepository : NHibernateRepository<Category>, ICategoryRepository
 	{
 
 	}

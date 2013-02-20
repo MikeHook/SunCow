@@ -10,7 +10,7 @@ using SunCow.Domain.Contracts.Repositories;
 
 namespace SunCow.Infrastructure.Repositories
 {
-	public class CardRepository : LinqRepository<Card>, ICardRepository
+	public class CardRepository : NHibernateRepository<Card>, ICardRepository
 	{
 		public Card GetBy(string routeName)
 		{

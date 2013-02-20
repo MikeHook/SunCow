@@ -67,9 +67,9 @@
         {
             XmlConfigurator.Configure();
 
-            ViewEngines.Engines.Clear();
+			//ViewEngines.Engines.Clear();
 
-            ViewEngines.Engines.Add(new RazorViewEngine());
+            //ViewEngines.Engines.Add(new RazorViewEngine());
 
             ModelBinders.Binders.DefaultBinder = new SharpModelBinder();
 

@@ -1,9 +1,11 @@
-﻿@{
-	ViewBag.Title = "SunCow Cards";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" MasterPageFile="~/Views/Shared/Site.Master" %>
 
-    <h2>Cards</h2>
+<asp:Content ID="menuContent" ContentPlaceHolderID="Menu" runat="server">
+	<%Html.RenderAction("CategoriesMenu", "Card"); %>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+	<h2>CATEGORY DETAILS</h2>
     <h3>What next?</h3>
     <p>
         Your S#arp Architecture 2.0RC project is now setup and ready to go. This release is built on the RTM verion of ASP.NET MVC 3 and .NET 4. The only tasks remaining
@@ -27,3 +29,4 @@
         If you need direction on what to do next, ask for assitance and guidance on the
         <a href="http://groups.google.com/group/sharp-architecture">S#arp Architecture discussion boards</a>.
     </p>
+</asp:Content>

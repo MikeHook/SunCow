@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
 	using SunCow.Domain.Contracts.Repositories;
+	using SunCow.Web.Mvc.Controllers.ViewModels;
 
     public class CardController : Controller
     {
@@ -14,11 +15,15 @@
 			_cardRepository = cardRepository;
 		}
 
-        public ActionResult Index()
-        {
-			var categories = _categoryRepository.FindAll();
+		public ActionResult Index()
+		{	
+			return View();
+		}
 
-            return View();
+        public ActionResult CategoriesMenu()
+        {
+			var categories = _categoryRepository.GetAll();
+			return View(new CategoriesModel(categories, Url, "Card"));
         }
 
 		public ActionResult Category(string category)

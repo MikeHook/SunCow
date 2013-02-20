@@ -25,7 +25,13 @@
         public virtual string SignOff { get; set; }
         
         public virtual Card Card { get; set; }
-        public virtual Customer Customer { get; set; }       
+        public virtual Customer Customer { get; set; }
+
+		/// <summary>
+		/// The route name used in the website URL segments
+		/// </summary>
+		//TODO - Add a unique constraint to this property & ensure only allowed characters are used in the name	
+		public virtual string RouteName { get; set; }
 
         public virtual string GetOutsideImagePath(string imageBasePath) 
         {

@@ -11,3 +11,10 @@ To run this application:
 Interesting Bits
 - Custom routes for card categories and cards
 - Razor views (new to me)
+- Shared view reuse for CategoriesMenu
+
+
+Limitations
+- Category / card route names should be unique
+- No authentication system, custom cards viewable by anyone
+- Basic page layouts
