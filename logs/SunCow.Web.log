@@ -1,0 +1,1322 @@
+2013-02-20 09:38:00,858 [19] ?.lambda_method(:0) - NHibernate 3.3.1.4000 (3.3.1.4000)
+
+2013-02-20 09:38:00,872 [19] ?.lambda_method(:0) - hibernate-configuration section not found in application configuration file
+
+2013-02-20 09:38:00,872 [19] ?.lambda_method(:0) - Bytecode provider name : lcg
+
+2013-02-20 09:38:00,874 [19] ?.lambda_method(:0) - Using reflection optimizer
+
+2013-02-20 09:38:00,915 [19] ?.lambda_method(:0) - connection.connection_string=Data Source=MOOK-VAIO\SQLEXPRESS;Initial Catalog=SunCow;Integrated Security=False;User ID=SunCowUser;Password=pass;Application Name=SunCow;
+
+2013-02-20 09:38:00,916 [19] ?.lambda_method(:0) - dialect=NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:00,916 [19] ?.lambda_method(:0) - connection.provider=NHibernate.Connection.DriverConnectionProvider
+
+2013-02-20 09:38:00,916 [19] ?.lambda_method(:0) - connection.driver_class=NHibernate.Driver.SqlClientDriver
+
+2013-02-20 09:38:00,917 [19] ?.lambda_method(:0) - show_sql=true
+
+2013-02-20 09:38:00,917 [19] ?.lambda_method(:0) - connection.release_mode=auto
+
+2013-02-20 09:38:00,917 [19] ?.lambda_method(:0) - adonet.batch_size=500
+
+2013-02-20 09:38:00,918 [19] ?.lambda_method(:0) - properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+
+2013-02-20 09:38:00,930 [19] ?.lambda_method(:0) - No mapped documents found in assembly: SunCow.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+2013-02-20 09:38:01,175 [19] ?.lambda_method(:0) - Mapping XML:
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"><class xmlns="urn:nhibernate-mapping-2.2" name="SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Cards"><id name="Id" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="CardId" /><generator class="identity" /></id><property name="CardName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="CardName" /></property><property name="Price" type="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="Price" /></property><property name="ThumbnailImageName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="ThumbnailImageName" /></property><property name="OutsideImageName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="OutsideImageName" /></property><property name="InsideImageName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="InsideImageName" /></property><property name="HasOutsideMessage" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="HasOutsideMessage" /></property><property name="RouteName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="RouteName" /></property><many-to-one class="SunCow.Domain.Category, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Category"><column name="CategoryId" /></many-to-one></class></hibernate-mapping>
+
+2013-02-20 09:38:01,277 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,332 [19] ?.lambda_method(:0) - Mapping class: SunCow.Domain.Card -> Cards
+
+2013-02-20 09:38:01,360 [19] ?.lambda_method(:0) - Mapped property: Id -> CardId, type: Int32
+
+2013-02-20 09:38:01,375 [19] ?.lambda_method(:0) - Mapped property: CardName -> CardName, type: String
+
+2013-02-20 09:38:01,376 [19] ?.lambda_method(:0) - Mapped property: Price -> Price, type: Decimal
+
+2013-02-20 09:38:01,376 [19] ?.lambda_method(:0) - Mapped property: ThumbnailImageName -> ThumbnailImageName, type: String
+
+2013-02-20 09:38:01,376 [19] ?.lambda_method(:0) - Mapped property: OutsideImageName -> OutsideImageName, type: String
+
+2013-02-20 09:38:01,376 [19] ?.lambda_method(:0) - Mapped property: InsideImageName -> InsideImageName, type: String
+
+2013-02-20 09:38:01,377 [19] ?.lambda_method(:0) - Mapped property: HasOutsideMessage -> HasOutsideMessage, type: Boolean
+
+2013-02-20 09:38:01,377 [19] ?.lambda_method(:0) - Mapped property: RouteName -> RouteName, type: String
+
+2013-02-20 09:38:01,387 [19] ?.lambda_method(:0) - Mapped property: Category -> CategoryId, type: SunCow.Domain.Category
+
+2013-02-20 09:38:01,401 [19] ?.lambda_method(:0) - Mapping XML:
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"><class xmlns="urn:nhibernate-mapping-2.2" name="SunCow.Domain.Category, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Categories"><id name="Id" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="CategoryId" /><generator class="identity" /></id><bag cascade="all-delete-orphan" inverse="true" name="Cards"><key><column name="CategoryId" /><column name="CategoryId" /></key><one-to-many class="SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" /></bag><property name="Name" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="Name" /></property><property name="RouteName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="RouteName" /></property><property name="ImageDirectory" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="ImageDirectory" /></property></class></hibernate-mapping>
+
+2013-02-20 09:38:01,421 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,422 [19] ?.lambda_method(:0) - Mapping class: SunCow.Domain.Category -> Categories
+
+2013-02-20 09:38:01,423 [19] ?.lambda_method(:0) - Mapped property: Id -> CategoryId, type: Int32
+
+2013-02-20 09:38:01,442 [19] ?.lambda_method(:0) - Mapped property: Cards, type: System.Collections.Generic.ICollection`1[[SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]](SunCow.Domain.Category.Cards)
+
+2013-02-20 09:38:01,443 [19] ?.lambda_method(:0) - Mapped property: Name -> Name, type: String
+
+2013-02-20 09:38:01,443 [19] ?.lambda_method(:0) - Mapped property: RouteName -> RouteName, type: String
+
+2013-02-20 09:38:01,443 [19] ?.lambda_method(:0) - Mapped property: ImageDirectory -> ImageDirectory, type: String
+
+2013-02-20 09:38:01,444 [19] ?.lambda_method(:0) - Mapping XML:
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"><class xmlns="urn:nhibernate-mapping-2.2" name="SunCow.Domain.CustomCard, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="CustomCards"><id name="Id" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="CustomCardId" /><generator class="identity" /></id><property name="OutsideMessage" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="OutsideMessage" /></property><property name="Salutation" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="Salutation" /></property><property name="InsideMessage" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="InsideMessage" /></property><property name="SignOff" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="SignOff" /></property><many-to-one class="SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Card"><column name="CardId" /></many-to-one><many-to-one class="SunCow.Domain.Customer, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Customer"><column name="CustomerId" /></many-to-one></class></hibernate-mapping>
+
+2013-02-20 09:38:01,445 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,446 [19] ?.lambda_method(:0) - Mapping class: SunCow.Domain.CustomCard -> CustomCards
+
+2013-02-20 09:38:01,446 [19] ?.lambda_method(:0) - Mapped property: Id -> CustomCardId, type: Int32
+
+2013-02-20 09:38:01,446 [19] ?.lambda_method(:0) - Mapped property: OutsideMessage -> OutsideMessage, type: String
+
+2013-02-20 09:38:01,447 [19] ?.lambda_method(:0) - Mapped property: Salutation -> Salutation, type: String
+
+2013-02-20 09:38:01,447 [19] ?.lambda_method(:0) - Mapped property: InsideMessage -> InsideMessage, type: String
+
+2013-02-20 09:38:01,448 [19] ?.lambda_method(:0) - Mapped property: SignOff -> SignOff, type: String
+
+2013-02-20 09:38:01,448 [19] ?.lambda_method(:0) - Mapped property: Card -> CardId, type: SunCow.Domain.Card
+
+2013-02-20 09:38:01,448 [19] ?.lambda_method(:0) - Mapped property: Customer -> CustomerId, type: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,449 [19] ?.lambda_method(:0) - Mapping XML:
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"><class xmlns="urn:nhibernate-mapping-2.2" name="SunCow.Domain.Customer, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Customers"><id name="Id" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="CustomerId" /><generator class="identity" /></id><bag cascade="all-delete-orphan" inverse="true" name="Cards"><key><column name="CustomerId" /><column name="CustomerId" /></key><one-to-many class="SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" /></bag><property name="FirstName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="FirstName" /></property><property name="LastName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="LastName" /></property><property name="ImageDirectory" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"><column name="ImageDirectory" /></property></class></hibernate-mapping>
+
+2013-02-20 09:38:01,450 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,451 [19] ?.lambda_method(:0) - Mapping class: SunCow.Domain.Customer -> Customers
+
+2013-02-20 09:38:01,451 [19] ?.lambda_method(:0) - Mapped property: Id -> CustomerId, type: Int32
+
+2013-02-20 09:38:01,452 [19] ?.lambda_method(:0) - Mapped property: Cards, type: System.Collections.Generic.ICollection`1[[SunCow.Domain.Card, SunCow.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]](SunCow.Domain.Customer.Cards)
+
+2013-02-20 09:38:01,452 [19] ?.lambda_method(:0) - Mapped property: FirstName -> FirstName, type: String
+
+2013-02-20 09:38:01,452 [19] ?.lambda_method(:0) - Mapped property: LastName -> LastName, type: String
+
+2013-02-20 09:38:01,453 [19] ?.lambda_method(:0) - Mapped property: ImageDirectory -> ImageDirectory, type: String
+
+2013-02-20 09:38:01,456 [19] ?.lambda_method(:0) - checking mappings queue
+
+2013-02-20 09:38:01,457 [19] ?.lambda_method(:0) - processing one-to-many association mappings
+
+2013-02-20 09:38:01,458 [19] ?.lambda_method(:0) - Second pass for collection: SunCow.Domain.Category.Cards
+
+2013-02-20 09:38:01,461 [19] ?.lambda_method(:0) - mapping collection: SunCow.Domain.Category.Cards -> Cards
+
+2013-02-20 09:38:01,466 [19] ?.lambda_method(:0) - Mapped collection key: CategoryId, one-to-many: SunCow.Domain.Card
+
+2013-02-20 09:38:01,467 [19] ?.lambda_method(:0) - Second pass for collection: SunCow.Domain.Customer.Cards
+
+2013-02-20 09:38:01,467 [19] ?.lambda_method(:0) - mapping collection: SunCow.Domain.Customer.Cards -> Cards
+
+2013-02-20 09:38:01,467 [19] ?.lambda_method(:0) - Mapped collection key: CustomerId, one-to-many: SunCow.Domain.Card
+
+2013-02-20 09:38:01,468 [19] ?.lambda_method(:0) - processing one-to-one association property references
+
+2013-02-20 09:38:01,468 [19] ?.lambda_method(:0) - processing foreign key constraints
+
+2013-02-20 09:38:01,470 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Category
+
+2013-02-20 09:38:01,472 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,473 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Card
+
+2013-02-20 09:38:01,473 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,473 [19] ?.lambda_method(:0) - processing filters (second pass)
+
+2013-02-20 09:38:01,491 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,495 [19] ?.lambda_method(:0) - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+
+2013-02-20 09:38:01,524 [19] ?.lambda_method(:0) - Using dialect defined converter
+
+2013-02-20 09:38:01,525 [19] ?.lambda_method(:0) - Generate SQL with comments: disabled
+
+2013-02-20 09:38:01,526 [19] ?.lambda_method(:0) - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+
+2013-02-20 09:38:01,527 [19] ?.lambda_method(:0) - Configuring ConnectionProvider
+
+2013-02-20 09:38:01,528 [19] ?.lambda_method(:0) - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+
+2013-02-20 09:38:01,529 [19] ?.lambda_method(:0) - Optimize cache for minimal puts: False
+
+2013-02-20 09:38:01,529 [19] ?.lambda_method(:0) - Connection release mode: auto
+
+2013-02-20 09:38:01,530 [19] ?.lambda_method(:0) - Default batch fetch size: 1
+
+2013-02-20 09:38:01,530 [19] ?.lambda_method(:0) - echoing all SQL to stdout
+
+2013-02-20 09:38:01,530 [19] ?.lambda_method(:0) - Statistics: disabled
+
+2013-02-20 09:38:01,531 [19] ?.lambda_method(:0) - Deleted entity synthetic identifier rollback: disabled
+
+2013-02-20 09:38:01,531 [19] ?.lambda_method(:0) - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+
+2013-02-20 09:38:01,534 [19] ?.lambda_method(:0) - Query language substitutions: {'true'='1', 'false'='0', 'yes'=''Y'', 'no'=''N''}
+
+2013-02-20 09:38:01,535 [19] ?.lambda_method(:0) - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+
+2013-02-20 09:38:01,536 [19] ?.lambda_method(:0) - Order SQL inserts for batching: enabled
+
+2013-02-20 09:38:01,536 [19] ?.lambda_method(:0) - Wrap result sets: disabled
+
+2013-02-20 09:38:01,537 [19] ?.lambda_method(:0) - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+
+2013-02-20 09:38:01,538 [19] ?.lambda_method(:0) - Default entity-mode: Poco
+
+2013-02-20 09:38:01,538 [19] ?.lambda_method(:0) - Named query checking : enabled
+
+2013-02-20 09:38:01,555 [19] ?.lambda_method(:0) - building session factory
+
+2013-02-20 09:38:01,556 [19] ?.lambda_method(:0) - Session factory constructed with filter configurations : {}
+
+2013-02-20 09:38:01,557 [19] ?.lambda_method(:0) - instantiating session factory with properties: {'use_reflection_optimizer'='True', 'connection.connection_string'='Data Source=MOOK-VAIO\SQLEXPRESS;Initial Catalog=SunCow;Integrated Security=False;User ID=SunCowUser;Password=pass;Application Name=SunCow;', 'dialect'='NHibernate.Dialect.MsSql2008Dialect', 'connection.provider'='NHibernate.Connection.DriverConnectionProvider', 'connection.driver_class'='NHibernate.Driver.SqlClientDriver', 'show_sql'='true', 'connection.release_mode'='auto', 'adonet.batch_size'='500'}
+
+2013-02-20 09:38:01,558 [19] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:38:01,580 [19] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:38:01,652 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Card
+
+2013-02-20 09:38:01,657 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Card
+
+2013-02-20 09:38:01,672 [19] ?.lambda_method(:0) - Create Instantiator using optimizer for:SunCow.Domain.Card
+
+2013-02-20 09:38:01,707 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Category
+
+2013-02-20 09:38:01,708 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Category
+
+2013-02-20 09:38:01,708 [19] ?.lambda_method(:0) - Create Instantiator using optimizer for:SunCow.Domain.Category
+
+2013-02-20 09:38:01,710 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.CustomCard
+
+2013-02-20 09:38:01,711 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.CustomCard
+
+2013-02-20 09:38:01,712 [19] ?.lambda_method(:0) - Create Instantiator using optimizer for:SunCow.Domain.CustomCard
+
+2013-02-20 09:38:01,713 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,713 [19] ?.lambda_method(:0) - No custom accessors found for entity: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,714 [19] ?.lambda_method(:0) - Create Instantiator using optimizer for:SunCow.Domain.Customer
+
+2013-02-20 09:38:01,742 [19] ?.lambda_method(:0) - Static SQL for collection: SunCow.Domain.Category.Cards
+
+2013-02-20 09:38:01,744 [19] ?.lambda_method(:0) -  Row insert: UPDATE Cards SET CategoryId = ? WHERE CardId = ?
+
+2013-02-20 09:38:01,745 [19] ?.lambda_method(:0) -  Row delete: UPDATE Cards SET CategoryId = null WHERE CategoryId = ? AND CardId = ?
+
+2013-02-20 09:38:01,745 [19] ?.lambda_method(:0) -  One-shot delete: UPDATE Cards SET CategoryId = null WHERE CategoryId = ?
+
+2013-02-20 09:38:01,747 [19] ?.lambda_method(:0) - Static SQL for collection: SunCow.Domain.Customer.Cards
+
+2013-02-20 09:38:01,748 [19] ?.lambda_method(:0) -  Row insert: UPDATE Cards SET CustomerId = ? WHERE CardId = ?
+
+2013-02-20 09:38:01,748 [19] ?.lambda_method(:0) -  Row delete: UPDATE Cards SET CustomerId = null WHERE CustomerId = ? AND CardId = ?
+
+2013-02-20 09:38:01,748 [19] ?.lambda_method(:0) -  One-shot delete: UPDATE Cards SET CustomerId = null WHERE CustomerId = ?
+
+2013-02-20 09:38:01,778 [19] ?.lambda_method(:0) - Static SQL for entity: SunCow.Domain.Card
+
+2013-02-20 09:38:01,778 [19] ?.lambda_method(:0) -  Version select: SELECT CardId FROM Cards WHERE CardId = ?
+
+2013-02-20 09:38:01,778 [19] ?.lambda_method(:0) -  Snapshot select: SELECT card_.CardId, card_.CardName as CardName0_, card_.Price as Price0_, card_.ThumbnailImageName as Thumbnai4_0_, card_.OutsideImageName as OutsideI5_0_, card_.InsideImageName as InsideIm6_0_, card_.HasOutsideMessage as HasOutsi7_0_, card_.RouteName as RouteName0_, card_.CategoryId as CategoryId0_ FROM Cards card_ WHERE card_.CardId=?
+
+2013-02-20 09:38:01,779 [19] ?.lambda_method(:0) -  Insert 0: INSERT INTO Cards (CardName, Price, ThumbnailImageName, OutsideImageName, InsideImageName, HasOutsideMessage, RouteName, CategoryId, CardId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+2013-02-20 09:38:01,779 [19] ?.lambda_method(:0) -  Update 0: UPDATE Cards SET CardName = ?, Price = ?, ThumbnailImageName = ?, OutsideImageName = ?, InsideImageName = ?, HasOutsideMessage = ?, RouteName = ?, CategoryId = ? WHERE CardId = ?
+
+2013-02-20 09:38:01,780 [19] ?.lambda_method(:0) -  Delete 0: DELETE FROM Cards WHERE CardId = ?
+
+2013-02-20 09:38:01,780 [19] ?.lambda_method(:0) -  Identity insert: INSERT INTO Cards (CardName, Price, ThumbnailImageName, OutsideImageName, InsideImageName, HasOutsideMessage, RouteName, CategoryId) VALUES (?, ?, ?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()
+
+2013-02-20 09:38:01,812 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,813 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,813 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ with (updlock, rowlock) WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,814 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ with (updlock, rowlock, nowait) WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,814 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ with (updlock, rowlock) WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,816 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,817 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity SunCow.Domain.Card: SELECT card0_.CardId as CardId0_0_, card0_.CardName as CardName0_0_, card0_.Price as Price0_0_, card0_.ThumbnailImageName as Thumbnai4_0_0_, card0_.OutsideImageName as OutsideI5_0_0_, card0_.InsideImageName as InsideIm6_0_0_, card0_.HasOutsideMessage as HasOutsi7_0_0_, card0_.RouteName as RouteName0_0_, card0_.CategoryId as CategoryId0_0_ FROM Cards card0_ WHERE card0_.CardId=?
+
+2013-02-20 09:38:01,818 [19] ?.lambda_method(:0) - Static SQL for entity: SunCow.Domain.Category
+
+2013-02-20 09:38:01,818 [19] ?.lambda_method(:0) -  Version select: SELECT CategoryId FROM Categories WHERE CategoryId = ?
+
+2013-02-20 09:38:01,818 [19] ?.lambda_method(:0) -  Snapshot select: SELECT category_.CategoryId, category_.Name as Name1_, category_.RouteName as RouteName1_, category_.ImageDirectory as ImageDir4_1_ FROM Categories category_ WHERE category_.CategoryId=?
+
+2013-02-20 09:38:01,818 [19] ?.lambda_method(:0) -  Insert 0: INSERT INTO Categories (Name, RouteName, ImageDirectory, CategoryId) VALUES (?, ?, ?, ?)
+
+2013-02-20 09:38:01,819 [19] ?.lambda_method(:0) -  Update 0: UPDATE Categories SET Name = ?, RouteName = ?, ImageDirectory = ? WHERE CategoryId = ?
+
+2013-02-20 09:38:01,819 [19] ?.lambda_method(:0) -  Delete 0: DELETE FROM Categories WHERE CategoryId = ?
+
+2013-02-20 09:38:01,819 [19] ?.lambda_method(:0) -  Identity insert: INSERT INTO Categories (Name, RouteName, ImageDirectory) VALUES (?, ?, ?); select SCOPE_IDENTITY()
+
+2013-02-20 09:38:01,819 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_0_, category0_.Name as Name1_0_, category0_.RouteName as RouteName1_0_, category0_.ImageDirectory as ImageDir4_1_0_ FROM Categories category0_ WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,820 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_0_, category0_.Name as Name1_0_, category0_.RouteName as RouteName1_0_, category0_.ImageDirectory as ImageDir4_1_0_ FROM Categories category0_ WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,820 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_0_, category0_.Name as Name1_0_, category0_.RouteName as RouteName1_0_, category0_.ImageDirectory as ImageDir4_1_0_ FROM Categories category0_ with (updlock, rowlock) WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,820 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_0_, category0_.Name as Name1_0_, category0_.RouteName as RouteName1_0_, category0_.ImageDirectory as ImageDir4_1_0_ FROM Categories category0_ with (updlock, rowlock, nowait) WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,821 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_0_, category0_.Name as Name1_0_, category0_.RouteName as RouteName1_0_, category0_.ImageDirectory as ImageDir4_1_0_ FROM Categories category0_ with (updlock, rowlock) WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,832 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_1_, category0_.Name as Name1_1_, category0_.RouteName as RouteName1_1_, category0_.ImageDirectory as ImageDir4_1_1_, cards1_.CategoryId as CategoryId3_, cards1_.CardId as CardId3_, cards1_.CardId as CardId0_0_, cards1_.CardName as CardName0_0_, cards1_.Price as Price0_0_, cards1_.ThumbnailImageName as Thumbnai4_0_0_, cards1_.OutsideImageName as OutsideI5_0_0_, cards1_.InsideImageName as InsideIm6_0_0_, cards1_.HasOutsideMessage as HasOutsi7_0_0_, cards1_.RouteName as RouteName0_0_, cards1_.CategoryId as CategoryId0_0_ FROM Categories category0_ left outer join Cards cards1_ on category0_.CategoryId=cards1_.CategoryId WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,833 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity SunCow.Domain.Category: SELECT category0_.CategoryId as CategoryId1_1_, category0_.Name as Name1_1_, category0_.RouteName as RouteName1_1_, category0_.ImageDirectory as ImageDir4_1_1_, cards1_.CategoryId as CategoryId3_, cards1_.CardId as CardId3_, cards1_.CardId as CardId0_0_, cards1_.CardName as CardName0_0_, cards1_.Price as Price0_0_, cards1_.ThumbnailImageName as Thumbnai4_0_0_, cards1_.OutsideImageName as OutsideI5_0_0_, cards1_.InsideImageName as InsideIm6_0_0_, cards1_.HasOutsideMessage as HasOutsi7_0_0_, cards1_.RouteName as RouteName0_0_, cards1_.CategoryId as CategoryId0_0_ FROM Categories category0_ left outer join Cards cards1_ on category0_.CategoryId=cards1_.CategoryId WHERE category0_.CategoryId=?
+
+2013-02-20 09:38:01,833 [19] ?.lambda_method(:0) - Static SQL for entity: SunCow.Domain.CustomCard
+
+2013-02-20 09:38:01,833 [19] ?.lambda_method(:0) -  Version select: SELECT CustomCardId FROM CustomCards WHERE CustomCardId = ?
+
+2013-02-20 09:38:01,833 [19] ?.lambda_method(:0) -  Snapshot select: SELECT customcard_.CustomCardId, customcard_.OutsideMessage as OutsideM2_2_, customcard_.Salutation as Salutation2_, customcard_.InsideMessage as InsideMe4_2_, customcard_.SignOff as SignOff2_, customcard_.CardId as CardId2_, customcard_.CustomerId as CustomerId2_ FROM CustomCards customcard_ WHERE customcard_.CustomCardId=?
+
+2013-02-20 09:38:01,834 [19] ?.lambda_method(:0) -  Insert 0: INSERT INTO CustomCards (OutsideMessage, Salutation, InsideMessage, SignOff, CardId, CustomerId, CustomCardId) VALUES (?, ?, ?, ?, ?, ?, ?)
+
+2013-02-20 09:38:01,834 [19] ?.lambda_method(:0) -  Update 0: UPDATE CustomCards SET OutsideMessage = ?, Salutation = ?, InsideMessage = ?, SignOff = ?, CardId = ?, CustomerId = ? WHERE CustomCardId = ?
+
+2013-02-20 09:38:01,834 [19] ?.lambda_method(:0) -  Delete 0: DELETE FROM CustomCards WHERE CustomCardId = ?
+
+2013-02-20 09:38:01,835 [19] ?.lambda_method(:0) -  Identity insert: INSERT INTO CustomCards (OutsideMessage, Salutation, InsideMessage, SignOff, CardId, CustomerId) VALUES (?, ?, ?, ?, ?, ?); select SCOPE_IDENTITY()
+
+2013-02-20 09:38:01,835 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,835 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,835 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ with (updlock, rowlock) WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,836 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ with (updlock, rowlock, nowait) WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,836 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ with (updlock, rowlock) WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,837 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,837 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity SunCow.Domain.CustomCard: SELECT customcard0_.CustomCardId as CustomCa1_2_0_, customcard0_.OutsideMessage as OutsideM2_2_0_, customcard0_.Salutation as Salutation2_0_, customcard0_.InsideMessage as InsideMe4_2_0_, customcard0_.SignOff as SignOff2_0_, customcard0_.CardId as CardId2_0_, customcard0_.CustomerId as CustomerId2_0_ FROM CustomCards customcard0_ WHERE customcard0_.CustomCardId=?
+
+2013-02-20 09:38:01,837 [19] ?.lambda_method(:0) - Static SQL for entity: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,838 [19] ?.lambda_method(:0) -  Version select: SELECT CustomerId FROM Customers WHERE CustomerId = ?
+
+2013-02-20 09:38:01,838 [19] ?.lambda_method(:0) -  Snapshot select: SELECT customer_.CustomerId, customer_.FirstName as FirstName3_, customer_.LastName as LastName3_, customer_.ImageDirectory as ImageDir4_3_ FROM Customers customer_ WHERE customer_.CustomerId=?
+
+2013-02-20 09:38:01,838 [19] ?.lambda_method(:0) -  Insert 0: INSERT INTO Customers (FirstName, LastName, ImageDirectory, CustomerId) VALUES (?, ?, ?, ?)
+
+2013-02-20 09:38:01,839 [19] ?.lambda_method(:0) -  Update 0: UPDATE Customers SET FirstName = ?, LastName = ?, ImageDirectory = ? WHERE CustomerId = ?
+
+2013-02-20 09:38:01,839 [19] ?.lambda_method(:0) -  Delete 0: DELETE FROM Customers WHERE CustomerId = ?
+
+2013-02-20 09:38:01,839 [19] ?.lambda_method(:0) -  Identity insert: INSERT INTO Customers (FirstName, LastName, ImageDirectory) VALUES (?, ?, ?); select SCOPE_IDENTITY()
+
+2013-02-20 09:38:01,840 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_0_, customer0_.FirstName as FirstName3_0_, customer0_.LastName as LastName3_0_, customer0_.ImageDirectory as ImageDir4_3_0_ FROM Customers customer0_ WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,840 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_0_, customer0_.FirstName as FirstName3_0_, customer0_.LastName as LastName3_0_, customer0_.ImageDirectory as ImageDir4_3_0_ FROM Customers customer0_ WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,840 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_0_, customer0_.FirstName as FirstName3_0_, customer0_.LastName as LastName3_0_, customer0_.ImageDirectory as ImageDir4_3_0_ FROM Customers customer0_ with (updlock, rowlock) WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,840 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_0_, customer0_.FirstName as FirstName3_0_, customer0_.LastName as LastName3_0_, customer0_.ImageDirectory as ImageDir4_3_0_ FROM Customers customer0_ with (updlock, rowlock, nowait) WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,841 [19] ?.lambda_method(:0) - Static select for entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_0_, customer0_.FirstName as FirstName3_0_, customer0_.LastName as LastName3_0_, customer0_.ImageDirectory as ImageDir4_3_0_ FROM Customers customer0_ with (updlock, rowlock) WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,841 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_1_, customer0_.FirstName as FirstName3_1_, customer0_.LastName as LastName3_1_, customer0_.ImageDirectory as ImageDir4_3_1_, cards1_.CustomerId as CustomerId3_, cards1_.CardId as CardId3_, cards1_.CardId as CardId0_0_, cards1_.CardName as CardName0_0_, cards1_.Price as Price0_0_, cards1_.ThumbnailImageName as Thumbnai4_0_0_, cards1_.OutsideImageName as OutsideI5_0_0_, cards1_.InsideImageName as InsideIm6_0_0_, cards1_.HasOutsideMessage as HasOutsi7_0_0_, cards1_.RouteName as RouteName0_0_, cards1_.CategoryId as CategoryId0_0_ FROM Customers customer0_ left outer join Cards cards1_ on customer0_.CustomerId=cards1_.CustomerId WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,842 [19] ?.lambda_method(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity SunCow.Domain.Customer: SELECT customer0_.CustomerId as CustomerId3_1_, customer0_.FirstName as FirstName3_1_, customer0_.LastName as LastName3_1_, customer0_.ImageDirectory as ImageDir4_3_1_, cards1_.CustomerId as CustomerId3_, cards1_.CardId as CardId3_, cards1_.CardId as CardId0_0_, cards1_.CardName as CardName0_0_, cards1_.Price as Price0_0_, cards1_.ThumbnailImageName as Thumbnai4_0_0_, cards1_.OutsideImageName as OutsideI5_0_0_, cards1_.InsideImageName as InsideIm6_0_0_, cards1_.HasOutsideMessage as HasOutsi7_0_0_, cards1_.RouteName as RouteName0_0_, cards1_.CategoryId as CategoryId0_0_ FROM Customers customer0_ left outer join Cards cards1_ on customer0_.CustomerId=cards1_.CustomerId WHERE customer0_.CustomerId=?
+
+2013-02-20 09:38:01,846 [19] ?.lambda_method(:0) - Static select for one-to-many SunCow.Domain.Category.Cards: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:38:01,846 [19] ?.lambda_method(:0) - Static select for one-to-many SunCow.Domain.Customer.Cards: SELECT cards0_.CustomerId as CustomerId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CustomerId=?
+
+2013-02-20 09:38:01,847 [19] ?.lambda_method(:0) - initializing class SessionFactoryObjectFactory
+
+2013-02-20 09:38:01,848 [19] ?.lambda_method(:0) - registered: 9166040d30934620b59b9d981e34dc84(unnamed)
+
+2013-02-20 09:38:01,848 [19] ?.lambda_method(:0) - no name configured
+
+2013-02-20 09:38:01,849 [19] ?.lambda_method(:0) - Instantiated session factory
+
+2013-02-20 09:38:01,851 [19] ?.lambda_method(:0) - Checking 0 named HQL queries
+
+2013-02-20 09:38:01,852 [19] ?.lambda_method(:0) - Checking 0 named SQL queries
+
+2013-02-20 09:38:01,855 [19] ?.lambda_method(:0) - checking mappings queue
+
+2013-02-20 09:38:01,857 [19] ?.lambda_method(:0) - processing one-to-many association mappings
+
+2013-02-20 09:38:01,857 [19] ?.lambda_method(:0) - processing one-to-one association property references
+
+2013-02-20 09:38:01,858 [19] ?.lambda_method(:0) - processing foreign key constraints
+
+2013-02-20 09:38:01,858 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Category
+
+2013-02-20 09:38:01,858 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,858 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Card
+
+2013-02-20 09:38:01,859 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,859 [19] ?.lambda_method(:0) - processing filters (second pass)
+
+2013-02-20 09:38:01,870 [19] ?.lambda_method(:0) - checking mappings queue
+
+2013-02-20 09:38:01,870 [19] ?.lambda_method(:0) - processing one-to-many association mappings
+
+2013-02-20 09:38:01,871 [19] ?.lambda_method(:0) - processing one-to-one association property references
+
+2013-02-20 09:38:01,871 [19] ?.lambda_method(:0) - processing foreign key constraints
+
+2013-02-20 09:38:01,871 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Category
+
+2013-02-20 09:38:01,872 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,872 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Card
+
+2013-02-20 09:38:01,872 [19] ?.lambda_method(:0) - resolving reference to class: SunCow.Domain.Customer
+
+2013-02-20 09:38:01,872 [19] ?.lambda_method(:0) - processing filters (second pass)
+
+2013-02-20 09:38:04,676 [19] ?.lambda_method(:0) - [session-id=7fe9379e-7d3b-456a-a24e-62ae757bee41] opened session at timestamp: 634969498846, for session factory: [/9166040d30934620b59b9d981e34dc84]
+
+2013-02-20 09:38:09,229 [19] ?.lambda_method(:0) - unable to locate HQL query plan in cache; generating (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:38:09,492 [19] ?.lambda_method(:0) - select << begin [level=1, statement=select]
+
+2013-02-20 09:38:09,509 [19] ?.lambda_method(:0) - FromClause{level=1} :  SunCow.Domain.Category (<generated>_0) -> category0_
+
+2013-02-20 09:38:09,523 [19] ?.lambda_method(:0) - Resolved :  <generated>_0 -> category0_.CategoryId
+
+2013-02-20 09:38:09,528 [19] ?.lambda_method(:0) - select : finishing up [level=1, statement=select]
+
+2013-02-20 09:38:09,529 [19] ?.lambda_method(:0) - processQuery() : ( SELECT ( {select clause} category0_.CategoryId ) ( FromClause{level=1} Categories category0_ ) )
+
+2013-02-20 09:38:09,548 [19] ?.lambda_method(:0) - Using FROM fragment [Categories category0_]
+
+2013-02-20 09:38:09,551 [19] ?.lambda_method(:0) - select >> end [level=1, statement=select]
+
+2013-02-20 09:38:09,552 [19] ?.lambda_method(:0) - throwQueryException() : no errors
+
+2013-02-20 09:38:09,582 [19] ?.lambda_method(:0) - SQL: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:09,582 [19] ?.lambda_method(:0) - throwQueryException() : no errors
+
+2013-02-20 09:38:09,608 [19] ?.lambda_method(:0) - located HQL query plan in cache (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:38:09,611 [19] ?.lambda_method(:0) - find: NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category]
+
+2013-02-20 09:38:09,612 [19] ?.lambda_method(:0) - named parameters: {}
+
+2013-02-20 09:38:09,642 [19] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:38:09,643 [19] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:09,646 [19] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:09,651 [19] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:09,652 [19] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:38:09,719 [19] ?.lambda_method(:0) - Could not execute query: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:09,731 [19] ?.lambda_method(:0) - SQL Exception
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:09,732 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:09,732 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:09,734 [19] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:38:09,736 [19] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:38:09,736 [19] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:38:09,746 [19] ?.lambda_method(:0) - could not execute query
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:09,747 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:09,747 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:09,749 [19] ?.lambda_method(:0) - could not execute query
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:09,749 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:09,750 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:09,767 [19] ?.lambda_method(:0) - after autocommit
+
+2013-02-20 09:38:09,768 [19] ?.lambda_method(:0) - transaction completion
+
+2013-02-20 09:38:09,769 [19] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:38:19,769 [19] ?.lambda_method(:0) - located HQL query plan in cache (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:38:19,770 [19] ?.lambda_method(:0) - located HQL query plan in cache (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:38:19,770 [19] ?.lambda_method(:0) - find: NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category]
+
+2013-02-20 09:38:19,771 [19] ?.lambda_method(:0) - named parameters: {}
+
+2013-02-20 09:38:19,771 [19] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:38:19,771 [19] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:19,772 [19] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:19,772 [19] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:38:19,772 [19] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:38:19,804 [19] ?.lambda_method(:0) - Could not execute query: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:19,813 [19] ?.lambda_method(:0) - SQL Exception
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:19,820 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:19,820 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:19,820 [19] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:38:19,821 [19] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:38:19,821 [19] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:38:19,830 [19] ?.lambda_method(:0) - could not execute query
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:19,830 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:19,831 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:19,831 [19] ?.lambda_method(:0) - could not execute query
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+[ select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_ ]
+
+
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+2013-02-20 09:38:19,832 [19] ?.lambda_method(:0) - System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RouteName'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+ClientConnectionId:dc6748cd-aa50-42e4-bd32-640e034804bd
+
+2013-02-20 09:38:19,832 [19] ?.lambda_method(:0) - Invalid column name 'RouteName'.
+
+2013-02-20 09:38:19,847 [19] ?.lambda_method(:0) - after autocommit
+
+2013-02-20 09:38:19,848 [19] ?.lambda_method(:0) - transaction completion
+
+2013-02-20 09:38:19,848 [19] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:38:24,934 [19] ?.lambda_method(:0) - closing session
+
+2013-02-20 09:38:24,935 [19] ?.lambda_method(:0) - running BatcherImpl.Dispose(true)
+
+2013-02-20 09:38:33,242 [18] ?.lambda_method(:0) - [session-id=085d5543-894f-4a1b-acc5-1ca77c513245] opened session at timestamp: 634969499132, for session factory: [/9166040d30934620b59b9d981e34dc84]
+
+2013-02-20 09:38:33,244 [18] ?.lambda_method(:0) - closing session
+
+2013-02-20 09:38:33,245 [18] ?.lambda_method(:0) - running BatcherImpl.Dispose(true)
+
+2013-02-20 09:38:33,277 [2] ?.lambda_method(:0) - [session-id=085d5543-894f-4a1b-acc5-1ca77c513245] executing real Dispose(False)
+
+2013-02-20 09:41:03,761 [11] ?.lambda_method(:0) - [session-id=b0ac9143-e711-4b5a-b966-1061cf4a5496] opened session at timestamp: 634969500637, for session factory: [/9166040d30934620b59b9d981e34dc84]
+
+2013-02-20 09:41:08,484 [11] ?.lambda_method(:0) - located HQL query plan in cache (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:41:08,485 [11] ?.lambda_method(:0) - located HQL query plan in cache (NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category])
+
+2013-02-20 09:41:08,486 [11] ?.lambda_method(:0) - find: NHibernate.Linq.NhQueryable`1[SunCow.Domain.Category]
+
+2013-02-20 09:41:08,487 [11] ?.lambda_method(:0) - named parameters: {}
+
+2013-02-20 09:41:08,488 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:08,488 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:41:08,489 [11] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:41:08,490 [11] ?.lambda_method(:0) - select category0_.CategoryId as CategoryId1_, category0_.Name as Name1_, category0_.RouteName as RouteName1_, category0_.ImageDirectory as ImageDir4_1_ from Categories category0_
+
+2013-02-20 09:41:08,491 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:08,495 [11] ?.lambda_method(:0) - ExecuteReader took 3 ms
+
+2013-02-20 09:41:08,499 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:08,505 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:08,507 [11] ?.lambda_method(:0) - result set row: 0
+
+2013-02-20 09:41:08,512 [11] ?.lambda_method(:0) - returning '1' as column: CategoryId1_
+
+2013-02-20 09:41:08,517 [11] ?.lambda_method(:0) - result row: EntityKey[SunCow.Domain.Category#1]
+
+2013-02-20 09:41:08,525 [11] ?.lambda_method(:0) - Initializing object from DataReader: [SunCow.Domain.Category#1]
+
+2013-02-20 09:41:08,532 [11] ?.lambda_method(:0) - Hydrating entity: [SunCow.Domain.Category#1]
+
+2013-02-20 09:41:08,533 [11] ?.lambda_method(:0) - returning 'Birthdays' as column: Name1_
+
+2013-02-20 09:41:08,534 [11] ?.lambda_method(:0) - returning 'Birthdays' as column: RouteName1_
+
+2013-02-20 09:41:08,534 [11] ?.lambda_method(:0) - returning 'Birthdays' as column: ImageDir4_1_
+
+2013-02-20 09:41:08,537 [11] ?.lambda_method(:0) - result set row: 1
+
+2013-02-20 09:41:08,537 [11] ?.lambda_method(:0) - returning '2' as column: CategoryId1_
+
+2013-02-20 09:41:08,538 [11] ?.lambda_method(:0) - result row: EntityKey[SunCow.Domain.Category#2]
+
+2013-02-20 09:41:08,538 [11] ?.lambda_method(:0) - Initializing object from DataReader: [SunCow.Domain.Category#2]
+
+2013-02-20 09:41:08,538 [11] ?.lambda_method(:0) - Hydrating entity: [SunCow.Domain.Category#2]
+
+2013-02-20 09:41:08,539 [11] ?.lambda_method(:0) - returning 'Christmas' as column: Name1_
+
+2013-02-20 09:41:08,539 [11] ?.lambda_method(:0) - returning 'Christmas' as column: RouteName1_
+
+2013-02-20 09:41:08,539 [11] ?.lambda_method(:0) - returning 'Christmas' as column: ImageDir4_1_
+
+2013-02-20 09:41:08,540 [11] ?.lambda_method(:0) - result set row: 2
+
+2013-02-20 09:41:08,540 [11] ?.lambda_method(:0) - returning '3' as column: CategoryId1_
+
+2013-02-20 09:41:08,540 [11] ?.lambda_method(:0) - result row: EntityKey[SunCow.Domain.Category#3]
+
+2013-02-20 09:41:08,540 [11] ?.lambda_method(:0) - Initializing object from DataReader: [SunCow.Domain.Category#3]
+
+2013-02-20 09:41:08,540 [11] ?.lambda_method(:0) - Hydrating entity: [SunCow.Domain.Category#3]
+
+2013-02-20 09:41:08,541 [11] ?.lambda_method(:0) - returning 'Engagement' as column: Name1_
+
+2013-02-20 09:41:08,541 [11] ?.lambda_method(:0) - returning 'Engagement' as column: RouteName1_
+
+2013-02-20 09:41:08,541 [11] ?.lambda_method(:0) - returning 'Engagement' as column: ImageDir4_1_
+
+2013-02-20 09:41:08,541 [11] ?.lambda_method(:0) - result set row: 3
+
+2013-02-20 09:41:08,542 [11] ?.lambda_method(:0) - returning '4' as column: CategoryId1_
+
+2013-02-20 09:41:08,542 [11] ?.lambda_method(:0) - result row: EntityKey[SunCow.Domain.Category#4]
+
+2013-02-20 09:41:08,542 [11] ?.lambda_method(:0) - Initializing object from DataReader: [SunCow.Domain.Category#4]
+
+2013-02-20 09:41:08,542 [11] ?.lambda_method(:0) - Hydrating entity: [SunCow.Domain.Category#4]
+
+2013-02-20 09:41:08,543 [11] ?.lambda_method(:0) - returning 'Thank You' as column: Name1_
+
+2013-02-20 09:41:08,543 [11] ?.lambda_method(:0) - returning 'ThankYou' as column: RouteName1_
+
+2013-02-20 09:41:08,543 [11] ?.lambda_method(:0) - returning 'ThankYou' as column: ImageDir4_1_
+
+2013-02-20 09:41:08,544 [11] ?.lambda_method(:0) - result set row: 4
+
+2013-02-20 09:41:08,544 [11] ?.lambda_method(:0) - returning '5' as column: CategoryId1_
+
+2013-02-20 09:41:08,544 [11] ?.lambda_method(:0) - result row: EntityKey[SunCow.Domain.Category#5]
+
+2013-02-20 09:41:08,544 [11] ?.lambda_method(:0) - Initializing object from DataReader: [SunCow.Domain.Category#5]
+
+2013-02-20 09:41:08,545 [11] ?.lambda_method(:0) - Hydrating entity: [SunCow.Domain.Category#5]
+
+2013-02-20 09:41:08,545 [11] ?.lambda_method(:0) - returning 'Valentine's' as column: Name1_
+
+2013-02-20 09:41:08,545 [11] ?.lambda_method(:0) - returning 'Valentines' as column: RouteName1_
+
+2013-02-20 09:41:08,545 [11] ?.lambda_method(:0) - returning 'Valentines' as column: ImageDir4_1_
+
+2013-02-20 09:41:08,546 [11] ?.lambda_method(:0) - done processing result set (5 rows)
+
+2013-02-20 09:41:08,546 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:08,547 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:08,547 [11] ?.lambda_method(:0) - DataReader was closed after 56 ms
+
+2013-02-20 09:41:08,547 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:08,548 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:08,548 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:08,549 [11] ?.lambda_method(:0) - total objects hydrated: 5
+
+2013-02-20 09:41:08,552 [11] ?.lambda_method(:0) - resolving associations for [SunCow.Domain.Category#1]
+
+2013-02-20 09:41:08,556 [11] ?.lambda_method(:0) - creating collection wrapper:[SunCow.Domain.Category.Cards#1]
+
+2013-02-20 09:41:08,565 [11] ?.lambda_method(:0) - done materializing entity [SunCow.Domain.Category#1]
+
+2013-02-20 09:41:08,565 [11] ?.lambda_method(:0) - resolving associations for [SunCow.Domain.Category#2]
+
+2013-02-20 09:41:08,565 [11] ?.lambda_method(:0) - creating collection wrapper:[SunCow.Domain.Category.Cards#2]
+
+2013-02-20 09:41:08,566 [11] ?.lambda_method(:0) - done materializing entity [SunCow.Domain.Category#2]
+
+2013-02-20 09:41:08,566 [11] ?.lambda_method(:0) - resolving associations for [SunCow.Domain.Category#3]
+
+2013-02-20 09:41:08,566 [11] ?.lambda_method(:0) - creating collection wrapper:[SunCow.Domain.Category.Cards#3]
+
+2013-02-20 09:41:08,566 [11] ?.lambda_method(:0) - done materializing entity [SunCow.Domain.Category#3]
+
+2013-02-20 09:41:08,567 [11] ?.lambda_method(:0) - resolving associations for [SunCow.Domain.Category#4]
+
+2013-02-20 09:41:08,567 [11] ?.lambda_method(:0) - creating collection wrapper:[SunCow.Domain.Category.Cards#4]
+
+2013-02-20 09:41:08,567 [11] ?.lambda_method(:0) - done materializing entity [SunCow.Domain.Category#4]
+
+2013-02-20 09:41:08,567 [11] ?.lambda_method(:0) - resolving associations for [SunCow.Domain.Category#5]
+
+2013-02-20 09:41:08,568 [11] ?.lambda_method(:0) - creating collection wrapper:[SunCow.Domain.Category.Cards#5]
+
+2013-02-20 09:41:08,568 [11] ?.lambda_method(:0) - done materializing entity [SunCow.Domain.Category#5]
+
+2013-02-20 09:41:08,569 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:08,570 [11] ?.lambda_method(:0) - after autocommit
+
+2013-02-20 09:41:08,571 [11] ?.lambda_method(:0) - transaction completion
+
+2013-02-20 09:41:08,571 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:09,683 [11] ?.lambda_method(:0) - initializing collection [SunCow.Domain.Category.Cards#1]
+
+2013-02-20 09:41:09,684 [11] ?.lambda_method(:0) - checking second-level cache
+
+2013-02-20 09:41:09,685 [11] ?.lambda_method(:0) - collection not cached
+
+2013-02-20 09:41:09,687 [11] ?.lambda_method(:0) - loading collection: [SunCow.Domain.Category.Cards#1]
+
+2013-02-20 09:41:09,698 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:09,699 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:41:09,700 [11] ?.lambda_method(:0) - binding '1' to parameter: 0
+
+2013-02-20 09:41:09,701 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0
+
+2013-02-20 09:41:09,703 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0;@p0 = 1 [Type: Int32 (0)]
+
+2013-02-20 09:41:09,703 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:09,717 [11] ?.lambda_method(:0) - ExecuteReader took 13 ms
+
+2013-02-20 09:41:09,718 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:09,718 [11] ?.lambda_method(:0) - result set contains (possibly empty) collection: [SunCow.Domain.Category.Cards#1]
+
+2013-02-20 09:41:09,719 [11] ?.lambda_method(:0) - constructing collection load context for result set [NHibernate.Driver.NHybridDataReader]
+
+2013-02-20 09:41:09,721 [11] ?.lambda_method(:0) - starting attempt to find loading collection [[SunCow.Domain.Category.Cards#1]]
+
+2013-02-20 09:41:09,722 [11] ?.lambda_method(:0) - collection not yet initialized; initializing
+
+2013-02-20 09:41:09,724 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:09,725 [11] ?.lambda_method(:0) - done processing result set (0 rows)
+
+2013-02-20 09:41:09,725 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:09,725 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:09,726 [11] ?.lambda_method(:0) - DataReader was closed after 21 ms
+
+2013-02-20 09:41:09,726 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:09,726 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:09,726 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:09,727 [11] ?.lambda_method(:0) - total objects hydrated: 0
+
+2013-02-20 09:41:09,729 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#1]] in any result-set context
+
+2013-02-20 09:41:09,729 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#1]] not located in load context
+
+2013-02-20 09:41:09,730 [11] ?.lambda_method(:0) - removing collection load entry [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#1]>@72da53]
+
+2013-02-20 09:41:09,731 [11] ?.lambda_method(:0) - 1 collections were found in result set for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:09,732 [11] ?.lambda_method(:0) - ending loading collection [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#1]>@72da53]
+
+2013-02-20 09:41:09,735 [11] ?.lambda_method(:0) - collection fully initialized: [SunCow.Domain.Category.Cards#1]
+
+2013-02-20 09:41:09,735 [11] ?.lambda_method(:0) - 1 collections initialized for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:09,736 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:09,737 [11] ?.lambda_method(:0) - done loading collection
+
+2013-02-20 09:41:09,737 [11] ?.lambda_method(:0) - collection initialized
+
+2013-02-20 09:41:12,373 [11] ?.lambda_method(:0) - initializing collection [SunCow.Domain.Category.Cards#2]
+
+2013-02-20 09:41:12,374 [11] ?.lambda_method(:0) - checking second-level cache
+
+2013-02-20 09:41:12,375 [11] ?.lambda_method(:0) - collection not cached
+
+2013-02-20 09:41:12,375 [11] ?.lambda_method(:0) - loading collection: [SunCow.Domain.Category.Cards#2]
+
+2013-02-20 09:41:12,376 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:12,377 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:41:12,378 [11] ?.lambda_method(:0) - binding '2' to parameter: 0
+
+2013-02-20 09:41:12,378 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0
+
+2013-02-20 09:41:12,379 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0;@p0 = 2 [Type: Int32 (0)]
+
+2013-02-20 09:41:12,379 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:12,380 [11] ?.lambda_method(:0) - ExecuteReader took 0 ms
+
+2013-02-20 09:41:12,380 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:12,381 [11] ?.lambda_method(:0) - result set contains (possibly empty) collection: [SunCow.Domain.Category.Cards#2]
+
+2013-02-20 09:41:12,381 [11] ?.lambda_method(:0) - constructing collection load context for result set [NHibernate.Driver.NHybridDataReader]
+
+2013-02-20 09:41:12,381 [11] ?.lambda_method(:0) - starting attempt to find loading collection [[SunCow.Domain.Category.Cards#2]]
+
+2013-02-20 09:41:12,382 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#2]] in any result-set context
+
+2013-02-20 09:41:12,382 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#2]] located in load context
+
+2013-02-20 09:41:12,382 [11] ?.lambda_method(:0) - collection not yet initialized; initializing
+
+2013-02-20 09:41:12,383 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:12,383 [11] ?.lambda_method(:0) - done processing result set (0 rows)
+
+2013-02-20 09:41:12,383 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:12,384 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:12,384 [11] ?.lambda_method(:0) - DataReader was closed after 4 ms
+
+2013-02-20 09:41:12,384 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:12,385 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:12,385 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:12,385 [11] ?.lambda_method(:0) - total objects hydrated: 0
+
+2013-02-20 09:41:12,386 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#2]] in any result-set context
+
+2013-02-20 09:41:12,386 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#2]] not located in load context
+
+2013-02-20 09:41:12,386 [11] ?.lambda_method(:0) - removing collection load entry [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#2]>@2cfbbfb]
+
+2013-02-20 09:41:12,387 [11] ?.lambda_method(:0) - 1 collections were found in result set for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:12,387 [11] ?.lambda_method(:0) - ending loading collection [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#2]>@2cfbbfb]
+
+2013-02-20 09:41:12,387 [11] ?.lambda_method(:0) - collection fully initialized: [SunCow.Domain.Category.Cards#2]
+
+2013-02-20 09:41:12,388 [11] ?.lambda_method(:0) - 1 collections initialized for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:12,388 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:12,388 [11] ?.lambda_method(:0) - done loading collection
+
+2013-02-20 09:41:12,389 [11] ?.lambda_method(:0) - collection initialized
+
+2013-02-20 09:41:13,464 [11] ?.lambda_method(:0) - initializing collection [SunCow.Domain.Category.Cards#3]
+
+2013-02-20 09:41:13,465 [11] ?.lambda_method(:0) - checking second-level cache
+
+2013-02-20 09:41:13,465 [11] ?.lambda_method(:0) - collection not cached
+
+2013-02-20 09:41:13,465 [11] ?.lambda_method(:0) - loading collection: [SunCow.Domain.Category.Cards#3]
+
+2013-02-20 09:41:13,466 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:13,466 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:41:13,466 [11] ?.lambda_method(:0) - binding '3' to parameter: 0
+
+2013-02-20 09:41:13,467 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0
+
+2013-02-20 09:41:13,467 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0;@p0 = 3 [Type: Int32 (0)]
+
+2013-02-20 09:41:13,467 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:13,468 [11] ?.lambda_method(:0) - ExecuteReader took 0 ms
+
+2013-02-20 09:41:13,469 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:13,469 [11] ?.lambda_method(:0) - result set contains (possibly empty) collection: [SunCow.Domain.Category.Cards#3]
+
+2013-02-20 09:41:13,469 [11] ?.lambda_method(:0) - constructing collection load context for result set [NHibernate.Driver.NHybridDataReader]
+
+2013-02-20 09:41:13,470 [11] ?.lambda_method(:0) - starting attempt to find loading collection [[SunCow.Domain.Category.Cards#3]]
+
+2013-02-20 09:41:13,470 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#3]] in any result-set context
+
+2013-02-20 09:41:13,470 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#3]] located in load context
+
+2013-02-20 09:41:13,471 [11] ?.lambda_method(:0) - collection not yet initialized; initializing
+
+2013-02-20 09:41:13,471 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:13,471 [11] ?.lambda_method(:0) - done processing result set (0 rows)
+
+2013-02-20 09:41:13,472 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:13,472 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:13,472 [11] ?.lambda_method(:0) - DataReader was closed after 4 ms
+
+2013-02-20 09:41:13,472 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:13,473 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:13,473 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:13,473 [11] ?.lambda_method(:0) - total objects hydrated: 0
+
+2013-02-20 09:41:13,474 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#3]] in any result-set context
+
+2013-02-20 09:41:13,474 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#3]] not located in load context
+
+2013-02-20 09:41:13,474 [11] ?.lambda_method(:0) - removing collection load entry [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#3]>@39ecfae]
+
+2013-02-20 09:41:13,475 [11] ?.lambda_method(:0) - 1 collections were found in result set for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:13,475 [11] ?.lambda_method(:0) - ending loading collection [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#3]>@39ecfae]
+
+2013-02-20 09:41:13,475 [11] ?.lambda_method(:0) - collection fully initialized: [SunCow.Domain.Category.Cards#3]
+
+2013-02-20 09:41:13,476 [11] ?.lambda_method(:0) - 1 collections initialized for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:13,476 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:13,476 [11] ?.lambda_method(:0) - done loading collection
+
+2013-02-20 09:41:13,477 [11] ?.lambda_method(:0) - collection initialized
+
+2013-02-20 09:41:14,564 [11] ?.lambda_method(:0) - initializing collection [SunCow.Domain.Category.Cards#4]
+
+2013-02-20 09:41:14,564 [11] ?.lambda_method(:0) - checking second-level cache
+
+2013-02-20 09:41:14,565 [11] ?.lambda_method(:0) - collection not cached
+
+2013-02-20 09:41:14,565 [11] ?.lambda_method(:0) - loading collection: [SunCow.Domain.Category.Cards#4]
+
+2013-02-20 09:41:14,566 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:14,566 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:41:14,567 [11] ?.lambda_method(:0) - binding '4' to parameter: 0
+
+2013-02-20 09:41:14,567 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0
+
+2013-02-20 09:41:14,570 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0;@p0 = 4 [Type: Int32 (0)]
+
+2013-02-20 09:41:14,570 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:14,571 [11] ?.lambda_method(:0) - ExecuteReader took 0 ms
+
+2013-02-20 09:41:14,571 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:14,571 [11] ?.lambda_method(:0) - result set contains (possibly empty) collection: [SunCow.Domain.Category.Cards#4]
+
+2013-02-20 09:41:14,572 [11] ?.lambda_method(:0) - constructing collection load context for result set [NHibernate.Driver.NHybridDataReader]
+
+2013-02-20 09:41:14,572 [11] ?.lambda_method(:0) - starting attempt to find loading collection [[SunCow.Domain.Category.Cards#4]]
+
+2013-02-20 09:41:14,572 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#4]] in any result-set context
+
+2013-02-20 09:41:14,572 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#4]] located in load context
+
+2013-02-20 09:41:14,573 [11] ?.lambda_method(:0) - collection not yet initialized; initializing
+
+2013-02-20 09:41:14,573 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:14,573 [11] ?.lambda_method(:0) - done processing result set (0 rows)
+
+2013-02-20 09:41:14,573 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:14,573 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:14,574 [11] ?.lambda_method(:0) - DataReader was closed after 3 ms
+
+2013-02-20 09:41:14,574 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:14,574 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:14,574 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:14,575 [11] ?.lambda_method(:0) - total objects hydrated: 0
+
+2013-02-20 09:41:14,575 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#4]] in any result-set context
+
+2013-02-20 09:41:14,575 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#4]] not located in load context
+
+2013-02-20 09:41:14,575 [11] ?.lambda_method(:0) - removing collection load entry [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#4]>@2b1266e]
+
+2013-02-20 09:41:14,575 [11] ?.lambda_method(:0) - 1 collections were found in result set for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:14,576 [11] ?.lambda_method(:0) - ending loading collection [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#4]>@2b1266e]
+
+2013-02-20 09:41:14,576 [11] ?.lambda_method(:0) - collection fully initialized: [SunCow.Domain.Category.Cards#4]
+
+2013-02-20 09:41:14,576 [11] ?.lambda_method(:0) - 1 collections initialized for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:14,576 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:14,577 [11] ?.lambda_method(:0) - done loading collection
+
+2013-02-20 09:41:14,577 [11] ?.lambda_method(:0) - collection initialized
+
+2013-02-20 09:41:16,953 [11] ?.lambda_method(:0) - initializing collection [SunCow.Domain.Category.Cards#5]
+
+2013-02-20 09:41:16,953 [11] ?.lambda_method(:0) - checking second-level cache
+
+2013-02-20 09:41:16,954 [11] ?.lambda_method(:0) - collection not cached
+
+2013-02-20 09:41:16,954 [11] ?.lambda_method(:0) - loading collection: [SunCow.Domain.Category.Cards#5]
+
+2013-02-20 09:41:16,954 [11] ?.lambda_method(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2013-02-20 09:41:16,954 [11] ?.lambda_method(:0) - Building an IDbCommand object for the SqlString: SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=?
+
+2013-02-20 09:41:16,955 [11] ?.lambda_method(:0) - binding '5' to parameter: 0
+
+2013-02-20 09:41:16,955 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0
+
+2013-02-20 09:41:16,955 [11] ?.lambda_method(:0) - SELECT cards0_.CategoryId as CategoryId1_, cards0_.CardId as CardId1_, cards0_.CardId as CardId0_0_, cards0_.CardName as CardName0_0_, cards0_.Price as Price0_0_, cards0_.ThumbnailImageName as Thumbnai4_0_0_, cards0_.OutsideImageName as OutsideI5_0_0_, cards0_.InsideImageName as InsideIm6_0_0_, cards0_.HasOutsideMessage as HasOutsi7_0_0_, cards0_.RouteName as RouteName0_0_, cards0_.CategoryId as CategoryId0_0_ FROM Cards cards0_ WHERE cards0_.CategoryId=@p0;@p0 = 5 [Type: Int32 (0)]
+
+2013-02-20 09:41:16,956 [11] ?.lambda_method(:0) - Obtaining IDbConnection from Driver
+
+2013-02-20 09:41:16,956 [11] ?.lambda_method(:0) - ExecuteReader took 0 ms
+
+2013-02-20 09:41:16,957 [11] ?.lambda_method(:0) - Opened IDataReader, open IDataReaders: 1
+
+2013-02-20 09:41:16,957 [11] ?.lambda_method(:0) - result set contains (possibly empty) collection: [SunCow.Domain.Category.Cards#5]
+
+2013-02-20 09:41:16,957 [11] ?.lambda_method(:0) - constructing collection load context for result set [NHibernate.Driver.NHybridDataReader]
+
+2013-02-20 09:41:16,958 [11] ?.lambda_method(:0) - starting attempt to find loading collection [[SunCow.Domain.Category.Cards#5]]
+
+2013-02-20 09:41:16,958 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#5]] in any result-set context
+
+2013-02-20 09:41:16,958 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#5]] located in load context
+
+2013-02-20 09:41:16,958 [11] ?.lambda_method(:0) - collection not yet initialized; initializing
+
+2013-02-20 09:41:16,959 [11] ?.lambda_method(:0) - processing result set
+
+2013-02-20 09:41:16,959 [11] ?.lambda_method(:0) - done processing result set (0 rows)
+
+2013-02-20 09:41:16,959 [11] ?.lambda_method(:0) - running NHybridDataReader.Dispose()
+
+2013-02-20 09:41:16,959 [11] ?.lambda_method(:0) - Closed IDataReader, open IDataReaders :0
+
+2013-02-20 09:41:16,960 [11] ?.lambda_method(:0) - DataReader was closed after 3 ms
+
+2013-02-20 09:41:16,960 [11] ?.lambda_method(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2013-02-20 09:41:16,960 [11] ?.lambda_method(:0) - aggressively releasing database connection
+
+2013-02-20 09:41:16,960 [11] ?.lambda_method(:0) - Closing connection
+
+2013-02-20 09:41:16,961 [11] ?.lambda_method(:0) - total objects hydrated: 0
+
+2013-02-20 09:41:16,961 [11] ?.lambda_method(:0) - attempting to locate loading collection entry [CollectionKey[SunCow.Domain.Category.Cards#5]] in any result-set context
+
+2013-02-20 09:41:16,961 [11] ?.lambda_method(:0) - collection [CollectionKey[SunCow.Domain.Category.Cards#5]] not located in load context
+
+2013-02-20 09:41:16,961 [11] ?.lambda_method(:0) - removing collection load entry [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#5]>@1fa9139]
+
+2013-02-20 09:41:16,962 [11] ?.lambda_method(:0) - 1 collections were found in result set for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:16,962 [11] ?.lambda_method(:0) - ending loading collection [NHibernate.Engine.Loading.LoadingCollectionEntry<rs=NHibernate.Driver.NHybridDataReader, coll=[SunCow.Domain.Category.Cards#5]>@1fa9139]
+
+2013-02-20 09:41:16,962 [11] ?.lambda_method(:0) - collection fully initialized: [SunCow.Domain.Category.Cards#5]
+
+2013-02-20 09:41:16,962 [11] ?.lambda_method(:0) - 1 collections initialized for role: SunCow.Domain.Category.Cards
+
+2013-02-20 09:41:16,963 [11] ?.lambda_method(:0) - initializing non-lazy collections
+
+2013-02-20 09:41:16,963 [11] ?.lambda_method(:0) - done loading collection
+
+2013-02-20 09:41:16,963 [11] ?.lambda_method(:0) - collection initialized
+
+2013-02-20 09:41:20,261 [11] ?.lambda_method(:0) - closing session
+
+2013-02-20 09:41:20,262 [11] ?.lambda_method(:0) - running BatcherImpl.Dispose(true)
+

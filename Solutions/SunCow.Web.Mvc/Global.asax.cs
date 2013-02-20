@@ -92,7 +92,7 @@
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
 
-            container.RegisterControllers(typeof(HomeController).Assembly);
+            container.RegisterControllers(typeof(CardController).Assembly);
             ComponentRegistrar.AddComponentsTo(container);
 
             var windsorServiceLocator = new WindsorServiceLocator(container);

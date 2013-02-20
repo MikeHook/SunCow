@@ -1,11 +1,11 @@
 INSERT INTO [SunCow].[dbo].[Categories]
-           ([Name],[ImageDirectory])
+           ([Name],[RouteName],[ImageDirectory])
      VALUES
-           ('Birthdays', 'Birthdays'), 
-           ('Christmas', 'Christmas'), 
-           ('Engagement', 'Engagement'), 
-           ('Thank You', 'ThankYou'), 
-           ('Valentine''s', 'Valentines')
+           ('Birthdays', 'Birthdays', 'Birthdays'), 
+           ('Christmas', 'Christmas', 'Christmas'), 
+           ('Engagement', 'Engagement', 'Engagement'), 
+           ('Thank You', 'ThankYou', 'ThankYou'), 
+           ('Valentine''s', 'Valentines', 'Valentines')
 GO
 
 

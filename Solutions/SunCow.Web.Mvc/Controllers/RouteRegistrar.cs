@@ -5,15 +5,25 @@
 
     public class RouteRegistrar
     {
-        public static void RegisterRoutesTo(RouteCollection routes) 
+        public static void RegisterRoutesTo(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
+			routes.MapRoute(
+				"Card Details",
+				"Cards/{category}/{cardName}",
+				new { controller = "Card", action = "Details" });
+
+			routes.MapRoute(
+				"Cards",
+				"Cards/{category}",
+				new { controller = "Card", action = "Category" });
+
             routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }); // Parameter defaults
+                new { controller = "Card", action = "Index", id = UrlParameter.Optional }); // Parameter defaults
         }
     }
 }
