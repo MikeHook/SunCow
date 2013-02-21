@@ -9,12 +9,12 @@ To run this application:
 - Update the NHibernate.config connection.connection_string to point to your database, with a permitted user
 
 Interesting Bits
+- Sharp architecture base project used to provide quick setup of loosely coupled architecture
 - Custom routes for card categories and cards
-- Razor views (new to me)
 - Shared view reuse for CategoriesMenu
 
-
 Limitations
+- Dependancy on Sharp architecture libraries
 - Category / card route names should be unique
 - No authentication system, custom cards viewable by anyone
 - Basic page layouts
