@@ -370,7 +370,7 @@ a.large.button, a.large.button:visited { font-size: 14px; padding: 8px 14px 9px;
 
 /* SunCow css */
 
-#category .card {padding: 20px; } 
-#category .card img {float: left; padding-right: 10px; }
+#category-page .card {padding: 20px; } 
+#category-page .card img {float: left; padding-right: 10px; }
 
 .clear { float:none; } 

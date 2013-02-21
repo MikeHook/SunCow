@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div id="category">
+<div id="category-page">
 	<h2><%:Model.CategoryName %></h2>
     <h3>Select a card from this category to personalise</h3>
 	<%foreach (var card in Model.Cards) {%>

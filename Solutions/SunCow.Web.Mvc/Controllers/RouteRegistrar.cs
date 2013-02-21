@@ -11,6 +11,16 @@
             routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
 			routes.MapRoute(
+				"Custom Card Details",
+				"Custom/{category}/{cardId}",
+				new { controller = "Custom", action = "Details" });
+
+			routes.MapRoute(
+				"Custom Cards",
+				"Custom/{category}",
+				new { controller = "Custom", action = "Category" });
+
+			routes.MapRoute(
 				"Card Details",
 				"Cards/{category}/{cardName}",
 				new { controller = "Card", action = "Details" });

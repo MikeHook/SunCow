@@ -37,8 +37,9 @@
 
 		public ActionResult Details(string cardName)
 		{
-			return View();
-		}
+			var card = _cardRepository.GetBy(cardName);
 
+			return View(new CardModel(card, this.ImageBasePath));
+		}
     }
 }

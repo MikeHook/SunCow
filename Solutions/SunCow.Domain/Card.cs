@@ -29,6 +29,7 @@
 		//TODO - Add a unique constraint to this property & ensure only allowed characters are used in the name	
 		public virtual string RouteName { get; set; }
 
+		//TODO - move to a task
         public virtual string GetImagePath(string imageBasePath, string imageName)
         {
 			if (imageBasePath.EndsWith("/") == false)

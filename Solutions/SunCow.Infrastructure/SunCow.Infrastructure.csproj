@@ -118,6 +118,8 @@
     <Compile Include="Repositories\CategoryRepository.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\CustomCardRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SunCow.Domain\SunCow.Domain.csproj">
