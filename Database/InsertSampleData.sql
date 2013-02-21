@@ -30,6 +30,7 @@ INSERT INTO [SunCow].[dbo].[Cards]
            ,[ThumbnailImageName]
            ,[OutsideImageName]
            ,[InsideImageName]
+           ,[BlankInsideImageName]
            ,[HasOutsideMessage]
            ,[RouteName]
            ,[CategoryId]
@@ -41,6 +42,7 @@ INSERT INTO [SunCow].[dbo].[Cards]
            ,'bauble-tn.png'
            ,'bauble-outside.png'
            ,'bauble-inside.png'
+           ,'blank-inside.jpg'
            ,1
            ,'baubles'
            ,@categoryId
@@ -51,6 +53,7 @@ INSERT INTO [SunCow].[dbo].[Cards]
            ,'santa-tn.png'
            ,'santa-outside.png'
            ,'santa-inside.png'
+           ,'blank-inside.jpg'
            ,0
            ,'santa'
            ,@categoryId
@@ -61,6 +64,7 @@ INSERT INTO [SunCow].[dbo].[Cards]
            ,'snowman-tn.png'
            ,'snowman-outside.png'
            ,'snowman-inside.png'
+           ,'blank-inside.jpg'
            ,0
            ,'snowman'
            ,@categoryId

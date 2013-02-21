@@ -154,6 +154,7 @@
     <Compile Include="Controllers\ViewModels\CategoriesMenuModel.cs" />
     <Compile Include="Controllers\ViewModels\CategoryModel.cs" />
     <Compile Include="Controllers\ViewModels\CardModel.cs" />
+    <Compile Include="Controllers\ViewModels\CustomCardModel.cs" />
     <Compile Include="Controllers\ViewModels\PersonaliseModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,7 @@
     <Content Include="Views\Card\Category.aspx" />
     <Content Include="Views\Card\Details.aspx" />
     <Content Include="Views\Card\Index.aspx" />
+    <Content Include="Views\Custom\Details.aspx" />
     <Content Include="Views\Shared\CategoriesMenu.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

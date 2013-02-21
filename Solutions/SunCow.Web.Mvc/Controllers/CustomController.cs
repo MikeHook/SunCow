@@ -39,20 +39,11 @@ using System;
 			return View(new CategoriesMenuModel(categories, Url, "Custom"));
         }
 
-		public ActionResult Category(string category)
+		public ActionResult Details(int cardId)
 		{
-			var cardCategory = _categoryRepository.GetBy(category);
-			var cards = _customCardRepository.GetAllBy(cardCategory);
-
-			throw new NotImplementedException();
-		}
-
-		public ActionResult Details(string cardName)
-		{
-			var card = _customCardRepository.GetBy(cardName);
-
-			throw new NotImplementedException();
-			//return View(new CardModel(card, this.ImageBasePath));
+			var card = _customCardRepository.Get(cardId);
+						
+			return View(new CustomCardModel(card, this.ImageBasePath));
 		}
     }
 }

@@ -21,6 +21,7 @@
         public virtual string ThumbnailImageName { get; set; }
         public virtual string OutsideImageName { get; set; }
         public virtual string InsideImageName { get; set; }
+		public virtual string BlankInsideImageName { get; set; }
         public virtual bool HasOutsideMessage { get; set; }
 
 		/// <summary>

@@ -23,10 +23,8 @@ namespace SunCow.Tasks.Commands
 				{
 					using (var g = Graphics.FromImage(bitmap))
 					{
-						g.SmoothingMode = SmoothingMode.AntiAlias;
-						var backgroundColor = Color.Bisque;
-						g.Clear(backgroundColor);
-						g.DrawString(customCard.InsideMessage, rectangleFont, SystemBrushes.WindowText, new PointF(10, 40));
+						g.SmoothingMode = SmoothingMode.AntiAlias;						
+						g.DrawString(customCard.InsideMessage, rectangleFont, SystemBrushes.WindowText, new PointF(150, 100));
 						bitmap.Save(customImageServerPath, ImageFormat.Png);
 					}
 				}

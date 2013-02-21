@@ -45,12 +45,12 @@ using System;
 			customCard = _customCardRepository.SaveOrUpdate(customCard);
 
 			
-			string templateImageServerPath = this.HttpContext.Server.MapPath(customCard.Card.GetImagePath(this.ImageBasePath, customCard.Card.InsideImageName));
+			string templateImageServerPath = this.HttpContext.Server.MapPath(customCard.Card.GetImagePath(this.ImageBasePath, customCard.Card.BlankInsideImageName));
 			string customImageServerPath = this.HttpContext.Server.MapPath(customCard.GetInsideImagePath(this.ImageBasePath));
 
 			_customImageGenerator.Generate(customCard, templateImageServerPath, customImageServerPath);
 
-			return RedirectToAction("Details", new { cardId = customCard.Id });
+			return RedirectToAction("Details", "Custom", new { cardId = customCard.Id });
 		}
     }
 }
