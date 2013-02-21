@@ -1,3 +1,4 @@
+
 INSERT INTO [SunCow].[dbo].[Categories]
            ([Name],[RouteName],[ImageDirectory])
      VALUES
@@ -6,9 +7,6 @@ INSERT INTO [SunCow].[dbo].[Categories]
            ('Engagement', 'Engagement', 'Engagement'), 
            ('Thank You', 'ThankYou', 'ThankYou'), 
            ('Valentine''s', 'Valentines', 'Valentines')
-
-DECLARE @categoryId INT
-Set @categoryId = (Select CategoryId from [dbo].[Categories] Where Name = 'Christmas');
 
 INSERT INTO [SunCow].[dbo].[Customers]
            ([FirstName]
@@ -19,8 +17,11 @@ INSERT INTO [SunCow].[dbo].[Customers]
            ,'Thornton'
            ,'Bob')
 
+DECLARE @categoryId INT
+Set @categoryId = (Select CategoryId from [SunCow].[dbo].[Categories] Where Name = 'Christmas');
+
 DECLARE @customerId INT
-Set @customerId = (Select Top 1 CustomerId from [dbo].Customers);
+Set @customerId = (Select Top 1 CustomerId from [SunCow].[dbo].Customers);
 
 INSERT INTO [SunCow].[dbo].[Cards]
            ([CardName]

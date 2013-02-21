@@ -26,8 +26,8 @@ namespace SunCow.Tasks.Commands
 						g.SmoothingMode = SmoothingMode.AntiAlias;
 						var backgroundColor = Color.Bisque;
 						g.Clear(backgroundColor);
-						g.DrawString(customCard.InsideMessage, rectangleFont, SystemBrushes.WindowText, new PointF(10, 40));						
-						bitmap.Save(customImageServerPath);
+						g.DrawString(customCard.InsideMessage, rectangleFont, SystemBrushes.WindowText, new PointF(10, 40));
+						bitmap.Save(customImageServerPath, ImageFormat.Png);
 					}
 				}
 			}
