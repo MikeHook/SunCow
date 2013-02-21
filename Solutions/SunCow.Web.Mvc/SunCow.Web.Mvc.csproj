@@ -150,8 +150,10 @@
     </Compile>
     <Compile Include="CastleWindsor\ComponentRegistrar.cs" />
     <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\RouteRegistrar.cs" />
-    <Compile Include="Controllers\ViewModels\CategoriesModel.cs" />
+    <Compile Include="Controllers\ViewModels\CategoriesMenuModel.cs" />
+    <Compile Include="Controllers\ViewModels\CategoryModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

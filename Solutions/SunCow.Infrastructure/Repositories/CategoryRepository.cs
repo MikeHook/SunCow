@@ -12,6 +12,15 @@ namespace SunCow.Infrastructure.Repositories
 {
 	public class CategoryRepository : NHibernateRepository<Category>, ICategoryRepository
 	{
-
+		public Category GetBy(string routeName)
+		{
+			IEnumerable<Category> category =
+				Session.Query<Category>().Where(c => c.RouteName == routeName);
+			if (category.Count() != 1)
+			{
+				return null;
+			}
+			return category.ElementAt(0);
+		}
 	}
 }

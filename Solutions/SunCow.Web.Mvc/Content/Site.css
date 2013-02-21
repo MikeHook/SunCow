@@ -367,3 +367,10 @@ a.large.button, a.large.button:visited { font-size: 14px; padding: 8px 14px 9px;
 	width: 1px;
 	height: 3px;
 }
+
+/* SunCow css */
+
+#category .card {padding: 20px; } 
+#category .card img {float: left; padding-right: 10px; }
+
+.clear { float:none; } 

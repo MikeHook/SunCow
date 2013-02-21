@@ -4,7 +4,7 @@
 	using SunCow.Domain.Contracts.Repositories;
 	using SunCow.Web.Mvc.Controllers.ViewModels;
 
-    public class CardController : Controller
+    public class CardController : BaseController
     {
 		private readonly ICategoryRepository _categoryRepository;
 		private readonly ICardRepository _cardRepository;
@@ -23,12 +23,16 @@
         public ActionResult CategoriesMenu()
         {
 			var categories = _categoryRepository.GetAll();
-			return View(new CategoriesModel(categories, Url, "Card"));
+			return View(new CategoriesMenuModel(categories, Url, "Card"));
         }
 
 		public ActionResult Category(string category)
 		{
-			return View();
+			var cardCategory = _categoryRepository.GetBy(category);
+			var cards = _cardRepository.GetAllBy(cardCategory);
+
+			var model = new CategoryModel(cardCategory, cards, this.ImageBasePath);
+			return View(model);
 		}
 
 		public ActionResult Details(string cardName)

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CategoriesModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CategoriesMenuModel>" %>
 
 <ul>
 <% foreach (var categoryLink in Model.CategoryLinks) { %>

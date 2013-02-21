@@ -1,32 +1,24 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" MasterPageFile="~/Views/Shared/Site.Master" %>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<CategoryModel>" MasterPageFile="~/Views/Shared/Site.Master" %>
 
 <asp:Content ID="menuContent" ContentPlaceHolderID="Menu" runat="server">
 	<%Html.RenderAction("CategoriesMenu", "Card"); %>
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-	<h2>CATEGORY DETAILS</h2>
-    <h3>What next?</h3>
-    <p>
-        Your S#arp Architecture 2.0RC project is now setup and ready to go. This release is built on the RTM verion of ASP.NET MVC 3 and .NET 4. The only tasks remaining
-        are to:
-        <ol>
-            <li>
-                <span style="font-weight:bold; font-style:italic">Create your database and set the connection string
-                within SunCow.Web.Mvc/NHibernate.config</span>
-            </li>
-            <li>
-                Optionally, modify the Fluent NHibernate preferences within SunCow.Data.NHibernateMaps.GetConventions()
-                if you don't like the default settings.  There's lots of terrific info about Fluent NHibernate
-                at <a href="http://wiki.fluentnhibernate.org/show/HomePage">http://wiki.fluentnhibernate.org/show/HomePage</a>.
-            </li>
-            <li>
-                Open SunCow.Tests.dll via NUnit and make sure all the tests are turning green.
-            </li>
-        </ol>
-    </p>
-    <p>
-        If you need direction on what to do next, ask for assitance and guidance on the
-        <a href="http://groups.google.com/group/sharp-architecture">S#arp Architecture discussion boards</a>.
-    </p>
+<div id="category">
+	<h2><%:Model.CategoryName %></h2>
+    <h3>Select a card from this category to personalise</h3>
+	<%foreach (var card in Model.Cards) {%>
+		<div class="card">
+			<a href="<%= Url.Action("Details", "Card", new {cardName = card.CardName}) %>">
+				<img src="<%= card.ThumbnailImagePath %>" alt="<%:card.CardName %>" />	
+			</a>		
+			<h3><%=Html.ActionLink<CardController>(c => c.Details(card.CardRouteName), card.CardName) %> </h3>
+			<p><%=card.Description %> </p>
+			<p><%=string.Format("{0:C2}", card.Price) %></p>
+		</div>
+		<div class="clear"></div>
+
+    <%} %>
+</div>
 </asp:Content>

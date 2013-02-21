@@ -9,14 +9,14 @@ using System.Web.Mvc;
 
 namespace SunCow.Web.Mvc.Controllers.ViewModels
 {
-	public class CategoriesModel
+	public class CategoriesMenuModel
 	{
-		public CategoriesModel() 
+		public CategoriesMenuModel() 
 		{
 			CategoryLinks = new Dictionary<string, string>();			
 		}
 
-		public CategoriesModel(IList<Category> categories, UrlHelper urlHelper, string controllerName) : this()
+		public CategoriesMenuModel(IList<Category> categories, UrlHelper urlHelper, string controllerName) : this()
 		{
 			foreach (var category in categories)
 			{

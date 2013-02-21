@@ -12,6 +12,13 @@ namespace SunCow.Infrastructure.Repositories
 {
 	public class CardRepository : NHibernateRepository<Card>, ICardRepository
 	{
+		public IEnumerable<Card> GetAllBy(Category category)
+		{
+			IEnumerable<Card> cards =
+				Session.Query<Card>().Where(c => c.Category.Id == category.Id);
+			return cards;
+		}
+
 		public Card GetBy(string routeName)
 		{
 			IEnumerable<Card> cards =
